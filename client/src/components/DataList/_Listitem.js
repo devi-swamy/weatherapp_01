@@ -1,7 +1,7 @@
 import React from "react";
 import { Daysago, weekDays } from "../Constants/Dates";
 
-const _Listitem = ({ CurDate }) => {
+const _Listitem = ({ CurDate, selected }) => {
   const today = new Date().getDate();
   return (
     <div>
@@ -9,7 +9,8 @@ const _Listitem = ({ CurDate }) => {
         href="#"
         className={
           "list-group-item list-group-item-action " +
-          (CurDate === today ? "list-group-item-success" : "")
+          (CurDate === today ? "list-group-item-success" : "") +
+          (selected ? "active" : "")
         }
       >
         <div className="d-flex w-100 justify-content-between">
