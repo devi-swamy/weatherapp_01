@@ -10,6 +10,15 @@ export const weekDays = [
 
 export const WeatherAppContents = [
   {
+    Date: 5
+  },
+  {
+    Date: 6
+  },
+  {
+    Date: 7
+  },
+  {
     Date: 8
   },
   {
@@ -26,15 +35,6 @@ export const WeatherAppContents = [
   },
   {
     Date: 13
-  },
-  {
-    Date: 14
-  },
-  {
-    Date: 15
-  },
-  {
-    Date: 16
   }
 ];
 
