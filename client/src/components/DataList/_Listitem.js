@@ -1,5 +1,5 @@
 import React from "react";
-import { Daysago } from "../Constants/Dates";
+import { Daysago, weekDays } from "../Constants/Dates";
 
 const _Listitem = ({ CurDate }) => {
   const today = new Date().getDate();
@@ -9,14 +9,28 @@ const _Listitem = ({ CurDate }) => {
         href="#"
         className={
           "list-group-item list-group-item-action " +
-          (CurDate === today ? "active" : "")
+          (CurDate === today ? "list-group-item-success" : "")
         }
       >
         <div className="d-flex w-100 justify-content-between">
           <h5 className="mb-1">May {CurDate}</h5>
           <small>{Daysago(CurDate - today)}</small>
         </div>
-        <p className="mb-1"></p>
+        <p className="mb-1">
+          {/* {
+            weekDays[
+              (weekDays.length + (new Date().getDate() + CurDate - today)) %
+                weekDays.length
+            ]
+          } */}
+          {
+            weekDays[
+              (weekDays.length + (CurDate - today + new Date().getDay())) %
+                weekDays.length
+            ]
+          }
+        </p>
+
         <small>And some small print.</small>
       </a>
     </div>
