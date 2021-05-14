@@ -13,9 +13,9 @@ class App extends Component {
     });
   };
 
-  handleSelectedDayClick = e => {
+  handleSelectedDayClick = SelectedDay => {
     this.setState({
-      SelectedDay: e.target.value
+      SelectedDay
     });
   };
   render() {
@@ -30,6 +30,7 @@ class App extends Component {
               <List
                 WeatherAppContents={WeatherAppContents}
                 SelectedDay={this.state.SelectedDay}
+                handleSelectedDayClick={this.handleSelectedDayClick}
               ></List>
             </div>
             <div className="col-8">
@@ -41,7 +42,6 @@ class App extends Component {
                     className="form-control"
                     value={this.state.SelectedDay}
                     onChange={this.handleSelectedDayChange}
-                    onClick={this.handleSelectedDayClick()}
                   >
                     <option value={null} disabled>
                       Please Select ...{" "}
