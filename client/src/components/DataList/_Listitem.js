@@ -1,14 +1,15 @@
 import React from "react";
 import { Daysago, weekDays } from "../Constants/Dates";
 
-const _Listitem = ({ CurDate, selected }) => {
+const _Listitem = ({ CurDate, selected, handleSelectedDayClick, index }) => {
   const today = new Date().getDate();
   return (
     <div>
-      <a
+      <span
         href="#"
+        onClick={() => handleSelectedDayClick(index)}
         className={
-          "list-group-item list-group-item-action " +
+          " ListItem list-group-item list-group-item-action " +
           (CurDate === today ? "list-group-item-success" : "") +
           (selected ? "active" : "")
         }
@@ -33,7 +34,7 @@ const _Listitem = ({ CurDate, selected }) => {
         </p>
 
         <small>And some small print.</small>
-      </a>
+      </span>
     </div>
   );
 };
